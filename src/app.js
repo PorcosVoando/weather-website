@@ -5,6 +5,8 @@ const hbs = require('hbs')
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
+const port = process.env.PORT || 3000
+
 const publicDirectoryPath = path.join(__dirname,"../public")
 const viewsPath = path.join(__dirname,'../templates/views')
 const partialsPath = path.join(__dirname,'../templates/partials')
@@ -80,6 +82,6 @@ app.get('*', function(req,res){
         errorMessage: 'Page could not be Found !!!'
     })
 })
-app.listen(3000, function(){
-    console.log('Server is Onn')
+app.listen(port, function(){
+    console.log('Server is on port' + port)
 })
